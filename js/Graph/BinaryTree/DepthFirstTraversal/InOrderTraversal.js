@@ -1,11 +1,11 @@
 // Used to traverse values in tree from left to right!
 
-function inOrderTraversalUsingRecursion(node, onAccess) {
+function inOrderTraversalUsingRecursion(node, cb) {
     if(node == null) {
         return;
     }
     inOrderTraversalUsingRecursion(node.left);
-    onAccess ? onAccess(node) : console.log(node.value);
+    cb ? cb(node) : console.log(node.value);
     inOrderTraversalUsingRecursion(node.right);
 }
 

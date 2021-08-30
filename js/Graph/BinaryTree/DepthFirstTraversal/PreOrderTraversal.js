@@ -1,16 +1,16 @@
 const Node = require('../../../Node');
-const {addChildNode} = require('../createTree');
+const {addChildNode} = require('../createBinarySearchTree');
 
 // used to clone tree
 // or for polish notation (prefix notation)
 
-function preOrderTraversalUsingRecursion(node, onAccess) {
+function preOrderTraversalUsingRecursion(node, cb) {
     if(node == null) {
         return;
     }
     preOrderTraversalUsingRecursion(node.left);
     preOrderTraversalUsingRecursion(node.right);
-    onAccess ? onAccess(node) : console.log(node.value);
+    cb ? cb(node) : console.log(node.value);
 }
 
 function cloneTree(tree) {

@@ -13,7 +13,7 @@ const Node = require('../../Node');
   2         6
                8
 */
-function createTree(values) {
+function createBinarySearchTree(values) {
 
     const rootNode = new Node(values[0]);
 
@@ -39,6 +39,6 @@ function addChildNode(node, newValue) {
 }
 
 module.exports = {
-    createTree,
+    createBinarySearchTree,
     addChildNode,
 };

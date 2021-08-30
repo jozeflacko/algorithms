@@ -1,7 +1,7 @@
-const {createTree} = require('./createTree');
+const {createBinarySearchTree} = require('./createBinarySearchTree');
 
 test('createTree', () => {
-    const tree = createTree([5,4,9,2,6,8]);
+    const tree = createBinarySearchTree([5,4,9,2,6,8]);
 
     /*
               5
