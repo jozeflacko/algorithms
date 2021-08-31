@@ -9,10 +9,10 @@ function preOrderTraversalUsingRecursion(node, cb) {
         return;
     }
 
+    cb ? cb(node) : console.log(node.value);
     preOrderTraversalUsingRecursion(node.left, cb);
     preOrderTraversalUsingRecursion(node.right, cb);
 
-    cb ? cb(node) : console.log(node.value);
 }
 
 function cloneTree(tree) {
