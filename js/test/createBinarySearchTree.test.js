@@ -1,4 +1,4 @@
-const {createBinarySearchTree} = require('./createBinarySearchTree');
+const {createBinarySearchTree} = require('../Graph/BinaryTree/createBinarySearchTree');
 
 test('createTree', () => {
     const tree = createBinarySearchTree([5,4,9,2,6,8]);

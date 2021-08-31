@@ -4,9 +4,9 @@ function inOrderTraversalUsingRecursion(node, cb) {
     if(node == null) {
         return;
     }
-    inOrderTraversalUsingRecursion(node.left);
+    inOrderTraversalUsingRecursion(node.left, cb);
     cb ? cb(node) : console.log(node.value);
-    inOrderTraversalUsingRecursion(node.right);
+    inOrderTraversalUsingRecursion(node.right, cb);
 }
 
 function toArray(tree) {

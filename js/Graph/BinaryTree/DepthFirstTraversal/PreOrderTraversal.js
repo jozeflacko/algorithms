@@ -8,25 +8,36 @@ function preOrderTraversalUsingRecursion(node, cb) {
     if(node == null) {
         return;
     }
-    preOrderTraversalUsingRecursion(node.left);
-    preOrderTraversalUsingRecursion(node.right);
+
+    preOrderTraversalUsingRecursion(node.left, cb);
+    preOrderTraversalUsingRecursion(node.right, cb);
+
     cb ? cb(node) : console.log(node.value);
 }
 
 function cloneTree(tree) {
-    let clone = new Node(tree.value);
-    preOrderTraversalUsingRecursion(tree, node => addChildNode(clone, node.value));
-    return clone;
+    let cloneTree = null;
+
+    preOrderTraversalUsingRecursion(tree, node => {
+
+        if(cloneTree == null) {
+            cloneTree = new Node(node.value);
+        } else {
+            addChildNode(cloneTree, node.value);
+        }
+    });
+
+    return cloneTree;
 }
 
-function toArray(tree) {
+function toArrayPreOrder(tree) {
     const arr = [];
     preOrderTraversalUsingRecursion(tree, node => arr.push(node.value));
     return arr;
 }
 
 module.exports = {
-    toArrayPreOrder: toArray,
+    toArrayPreOrder,
     cloneTree,
     preOrderTraversalUsingRecursion
 }

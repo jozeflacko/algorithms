@@ -1,3 +1,3 @@
-function deleteNodeInABinaryTree() {
+function deleteNodeInABinarySearchTree() {
 
 }

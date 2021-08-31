@@ -27,7 +27,6 @@ function createBinarySearchTree(values) {
 function addChildNode(node, newValue) {
 
     const direction = newValue < node.value ? 'left' : 'right';
-    console.log('direction', direction);
 
     let child = node[direction];
 

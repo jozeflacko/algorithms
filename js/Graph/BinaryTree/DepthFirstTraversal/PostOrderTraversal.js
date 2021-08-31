@@ -5,8 +5,8 @@ function postOrderTraversalUsingRecursion(node, cb = null) {
     if(node == null) {
         return;
     }
-    postOrderTraversalUsingRecursion(node.left);
-    postOrderTraversalUsingRecursion(node.right);
+    postOrderTraversalUsingRecursion(node.left, cb);
+    postOrderTraversalUsingRecursion(node.right, cb);
     cb ? cb(node) : console.log(node.value);
 }
 
