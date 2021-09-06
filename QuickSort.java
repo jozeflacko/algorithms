@@ -5,6 +5,8 @@ public class QuickSort {
         if (arr.length < 2) {
             return arr;
         }
+        
+        
 
         int pivotIndex = arr.length - 1;
         int pivotValue = arr[pivotIndex];

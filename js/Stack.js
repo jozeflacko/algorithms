@@ -1,5 +1,7 @@
 class Stack {
+    
     arr = [];
+    
     add(what) {
         this.arr.push(what);
     }
