@@ -31,6 +31,22 @@ class BinaryTree {
 }
 
 /**
+ * A full binary tree (sometimes proper binary tree or 2-tree)
+ * is a tree in which every node other than the leaves has two children
+ */
+class FullBinaryTree {
+
+}
+
+/**
+ * A complete binary tree is a binary tree in which every level,
+ * except possibly the last, is completely filled, and all nodes are as far left as possible
+ */
+class CompleteBinaryTree {
+
+}
+
+/**
  * Every node in the left subtree must contain a value less than the value
  * of the root node, and the value of each node in the right subtree must
  * be bigger than the value of the root node.
@@ -99,6 +115,8 @@ class Treap {
 module.exports = {
     Tree,
     BinaryTree,
+    FullBinaryTree,
+    CompleteBinaryTree,
     BinarySearchTree,
     AVLTree,
     SplayTree,
