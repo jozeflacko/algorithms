@@ -1,13 +1,21 @@
+import {Node, BinaryNode} from './Node';
+
 /**
- * A tree is also one of the data structures that represent hierarchical data.
+ * Tree is also one of the data structures that represent hierarchical data.
+ * Tree is a non-linear data structure.
+ * It is a collection of nodes and edges
  *
- * Tree has a root node and children nodes. Last node is called leaf
- * There can be n number of subtrees in a general tree
+ * There is a unique node called ROOT in trees and children nodes. Last node is called leaf
+ * There can be n number of subtrees in a general tree.
+ *
+ * There will not be any cycle!
+ *
  * Root node is on level 0!
  *
  *
  * Applications of trees
  *    Storing naturally hierarchical data
+ *    For game trees, decision trees, the tree is used
  *    It is used to organize data for efficient insertion, deletion and searching
  *    - Binary tree has a logN time for searching an element.
  *    - Trie: It is a special kind of tree that is used to store the dictionary. It is a fast and efficient way for dynamic spell checking.
@@ -17,24 +25,35 @@
  */
 
 /**
- * each node has 0..n child nodes
+ * General trees consist of the nodes having any number of child nodes.
+ * But in case of binary trees every node can have at the most two child nodes.
+ *
+ * Each node has 0..n child nodes
  */
 class Tree {
-
+  root = null;
+  constructor(value) {
+      this.root = new Node(value);
+  }
 }
 
 /**
- * each node has maximally 2 child nodes
+ * Each node has maximally 2 child nodes
+ *
+ * Maximal height is....TODO
  */
 class BinaryTree {
-
+    root = null;
+    constructor(value) {
+        this.root = new BinaryNode(value);
+    }
 }
 
 /**
  * A full binary tree (sometimes proper binary tree or 2-tree)
  * is a tree in which every node other than the leaves has two children
  */
-class FullBinaryTree {
+class FullBinaryTree extends BinaryTree {
 
 }
 
@@ -42,7 +61,7 @@ class FullBinaryTree {
  * A complete binary tree is a binary tree in which every level,
  * except possibly the last, is completely filled, and all nodes are as far left as possible
  */
-class CompleteBinaryTree {
+class CompleteBinaryTree extends BinaryTree {
 
 }
 
@@ -51,7 +70,7 @@ class CompleteBinaryTree {
  * of the root node, and the value of each node in the right subtree must
  * be bigger than the value of the root node.
  */
-class BinarySearchTree {
+class BinarySearchTree extends  BinaryTree {
 
 }
 
