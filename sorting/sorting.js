@@ -24,6 +24,10 @@ function bubbleSort(arr) {
 
 /**
  *
+ * Outer loop goes from left to right.
+ * In Inner loop goes from right to left from outer loop position.
+ * We try to move selected item to left to put in on right position.
+ *
  * Time complexity: O(n2)
  * Space complexity: no extra
  */
@@ -39,6 +43,7 @@ function insertionSort(arr) {
     }
     return arr;
 }
+
 
 function selectionSort(arr) {
     const sorted = [];

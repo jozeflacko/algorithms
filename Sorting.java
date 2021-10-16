@@ -31,43 +31,7 @@ class Sorting {
         return result;
     }
 
-    int[] bubbleSort(int[] arr) {
-        int n = arr.length;
-        for (int i = n; i > 0; i--) {
-            for (int j = 0; j < n - 1; j++) {
-                if (arr[j] > arr[j + 1]) {
-                    int temp = arr[j];
-                    arr[j] = arr[j + 1];
-                    arr[j + 1] = temp;
-                }
-            }
-        }
-        return arr;
-    }
 
-    // https://www.youtube.com/watch?v=JU767SDMDvA&ab_channel=MichaelSambol
-    // we start from left and go to right
-    // for each item we will find sorted place where it belongs on the left side
-    int[] insertionSort(int[] arr) {
-        for (int i = 0; i < arr.length; i++) {
-            int indexOfItemWithWhichWeCompare = i - 1;
-            int indexOfCurrentlySortedItem = i;
-            while (indexOfCurrentlySortedItem >= 0) {
-                if (indexOfItemWithWhichWeCompare >= 0) {
-                    if (arr[indexOfItemWithWhichWeCompare] > arr[indexOfCurrentlySortedItem]) {
-                        int temp = arr[indexOfItemWithWhichWeCompare];
-                        arr[indexOfItemWithWhichWeCompare] = arr[indexOfCurrentlySortedItem];
-                        arr[indexOfCurrentlySortedItem] = temp;
-                    }
-                }
-                indexOfItemWithWhichWeCompare--;
-                indexOfCurrentlySortedItem--;
-            }
-        }
-        return arr;
-
-
-    }
 
     // https://www.youtube.com/watch?v=g-PGLbMth_g&ab_channel=MichaelSambol
     // we will go from left to right
