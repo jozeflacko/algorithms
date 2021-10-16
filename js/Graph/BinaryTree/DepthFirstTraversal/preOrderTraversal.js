@@ -1,4 +1,4 @@
-const {Node} = require('../../../Node');
+const {Node} = require('../../../../data-scructures/Node');
 const {addChildNode} = require('../createBinarySearchTree');
 
 // used to clone tree

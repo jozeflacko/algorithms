@@ -9,7 +9,7 @@
  */
 class Node {
     value = null;
-
+    children = []; // array with children
     constructor(value) {
         this.value = value;
     }
@@ -20,12 +20,29 @@ class Node {
  *
  * Is an item in a DoublyLinkedList
  */
-class BinaryNode extends Node {
+class BinaryNode {
+
+    value = null;
+
     left = null;    // In DoublyLinkedList called "previous"
     right = null;   // In DoublyLinkedList called "next"
+
+    constructor(value) {
+        this.value = value;
+    }
+}
+
+class TrieNode {
+    value = null;
+    children = {}; // instead of an array we use hashmap to easier access children!
+    isEndOfWord = false;
+    constructor(value) {
+        this.value = value;
+    }
 }
 
 module.exports = {
     Node,
     BinaryNode,
+    TrieNode,
 };

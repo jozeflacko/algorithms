@@ -1,4 +1,4 @@
-import {Node, BinaryNode} from './Node';
+import {Node, BinaryNode, TrieNode} from './Node';
 
 /**
  * Tree is also one of the data structures that represent hierarchical data.
@@ -69,6 +69,10 @@ class CompleteBinaryTree extends BinaryTree {
  * Every node in the left subtree must contain a value less than the value
  * of the root node, and the value of each node in the right subtree must
  * be bigger than the value of the root node.
+ *
+ * If we store keys in binary search tree, a well balanced BST will need
+ * time proportional to M * log N, where M is maximum string length
+ * and N is number of keys in tree.
  */
 class BinarySearchTree extends  BinaryTree {
 
@@ -131,6 +135,19 @@ class Treap {
 
 }
 
+/**
+ * Search tree
+ *
+ * Using Trie, we can search the key in O(M) time (where Binary Search Tree has only M * Log(n) ).
+ * However the penalty is on Trie storage requirements.
+ */
+class Trie {
+    root = null;
+    constructor(value) {
+        this.root = new TrieNode(value);
+    }
+}
+
 module.exports = {
     Tree,
     BinaryTree,
@@ -141,4 +158,5 @@ module.exports = {
     SplayTree,
     RedBlackTree,
     Treap,
+    Trie
 };

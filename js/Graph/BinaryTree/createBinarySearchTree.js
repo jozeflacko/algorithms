@@ -1,4 +1,4 @@
-const {Node} = require('../../Node');
+const {Node} = require('../../../data-scructures/Node');
 
 // Special type of graph is a tree where a node has maximally 2 children nodes
 // We know:

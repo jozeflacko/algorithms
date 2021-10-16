@@ -1,4 +1,4 @@
-const Queue = require('../../../Queue');
+const Queue = require('../../../../data-scructures/Queue');
 
 // breath-first traversal
 // time complexity is O(n) where n is number of nodes
