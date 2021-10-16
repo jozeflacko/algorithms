@@ -10,22 +10,34 @@
  * Space complexity: no extra
  */
 function bubbleSort(arr) {
-    for(let i=arr.length;i>0;i--) {
-        for(let j=0;j<i-1;j++) {
-            const current = arr[j], next = arr[j+1];
-            if(current > next) {
+    for (let i = arr.length; i > 0; i--) {
+        for (let j = 0; j < i - 1; j++) {
+            const current = arr[j], next = arr[j + 1];
+            if (current > next) {
                 arr[j] = next;
-                arr[j+1] = current;
+                arr[j + 1] = current;
             }
         }
     }
     return arr;
 }
 
+/**
+ *
+ * Time complexity: O(n2)
+ * Space complexity: no extra
+ */
 function insertionSort(arr) {
-    const sorted = [];
-
-    return sorted;
+    for (let i = 0; i < arr.length; i++) {
+        const ii = arr[i];
+        for(let j=i; j>=0;j--) {
+            if(ii < arr[j]) {
+                arr[i] = arr[j];
+                arr[j] = ii;
+            }
+        }
+    }
+    return arr;
 }
 
 function selectionSort(arr) {
@@ -68,3 +80,4 @@ module.exports = {
     heapSort,
     shellSort,
 }
+
