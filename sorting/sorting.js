@@ -46,9 +46,16 @@ function insertionSort(arr) {
 
 
 function selectionSort(arr) {
-    const sorted = [];
-
-    return sorted;
+    for (let i = 0; i < arr.length; i++) {
+        const ii = arr[i];
+        for(let j=i; j>=0;j--) {
+            if(ii < arr[j]) {
+                arr[i] = arr[j];
+                arr[j] = ii;
+            }
+        }
+    }
+    return arr;
 }
 
 function mergeSort(arr) {
