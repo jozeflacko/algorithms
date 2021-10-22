@@ -14,8 +14,7 @@ function bubbleSort(arr) {
         for (let j = 0; j < i - 1; j++) {
             const current = arr[j], next = arr[j + 1];
             if (current > next) {
-                arr[j] = next;
-                arr[j + 1] = current;
+                swapValues(arr, j, j+1);
             }
         }
     }
@@ -36,23 +35,33 @@ function insertionSort(arr) {
         const ii = arr[i];
         for(let j=i; j>=0;j--) {
             if(ii < arr[j]) {
-                arr[i] = arr[j];
-                arr[j] = ii;
+                swapValues(arr, i,j);
             }
         }
     }
     return arr;
 }
 
-
+/**
+ * Outer loop goes from left to rignt and we try to select for every position a
+ * next minimum found on the right side of the array
+ *
+ * Time complexity: O(n2)
+ * Space complexity: no extra
+ */
 function selectionSort(arr) {
-    for (let i = 0; i < arr.length; i++) {
-        const ii = arr[i];
-        for(let j=i; j>=0;j--) {
-            if(ii < arr[j]) {
-                arr[i] = arr[j];
-                arr[j] = ii;
+    for (let currentIndex = 0; currentIndex < arr.length-1; currentIndex++) {
+
+        let smallestValueIndex = currentIndex;
+
+        for(let j=currentIndex+1; j<arr.length;j++) {
+            if(arr[smallestValueIndex] > arr[j]) {
+                smallestValueIndex = j;
             }
+        }
+
+        if(currentIndex != smallestValueIndex) {
+            swapValues(arr, currentIndex, smallestValueIndex);
         }
     }
     return arr;
@@ -80,6 +89,12 @@ function shellSort(arr) {
     const sorted = [];
 
     return sorted;
+}
+
+function swapValues(array, index1, index2) {
+    const temp = array[index1];
+    array[index1] = array[index2];
+    array[index2] = temp;
 }
 
 
